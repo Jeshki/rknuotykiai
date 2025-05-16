@@ -1,0 +1,835 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.theme-light {
+  --bg-color: #f6ef31;
+  --text-color: #131a23;
+  --accent-color: #f6ef31;
+}
+
+.theme-dark {
+  --bg-color: #131a23;
+  --text-color: #f6ef31;
+  --accent-color: #f6ef31;
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Roboto', sans-serif;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content {
+  flex: 1;
+}
+
+.text-accent {
+  color: var(--accent-color);
+}
+
+.bg-accent {
+  background-color: var(--accent-color);
+}
+
+.footer {
+  padding: 20px;
+  text-align: center;
+  margin-top: auto;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.footer.light {
+  background-color: #131a23;
+  color: #f6ef31;
+}
+
+.footer.dark {
+  background-color: #f6ef31;
+  color: #131a23;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-links {
+  margin-top: 10px;
+}
+
+.footer-links a {
+  color: inherit;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: 500;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .footer-links {
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer-links a {
+    margin: 5px 0;
+  }
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 50vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.background-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.video-overlay {
+  position: relative;
+  z-index: 2;
+  color: white;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.video-overlay h2 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+.video-overlay p {
+  font-size: 1.2em;
+}
+
+.apie-mane-page.light {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.apie-mane-page.dark {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.artimiausi-renginiai-page {
+  padding: 40px 20px;
+  text-align: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  min-height: calc(100vh - var(--navigation-height, 80px) - var(--footer-height, 100px));
+  box-sizing: border-box;
+}
+
+.artimiausi-renginiai-page.light {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.artimiausi-renginiai-page.dark {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.artimiausi-renginiai-page h1 {
+  font-size: 2.8em;
+  margin-bottom: 20px;
+}
+
+.artimiausi-renginiai-page p {
+  font-size: 1.1em;
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+.zygiai-kalendorius-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 40px; 
+}
+
+.zygio-kortele {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.zygio-kortele:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.zygio-kortele.dark {
+  background-color: #333;
+  color: #f0f0f0;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+}
+
+.zygio-kortele h3 {
+  font-size: 1.8em;
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: var(--accent-color);
+}
+
+.zygio-kortele p {
+  font-size: 0.95em;
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+.zygio-kortele p.description {
+  margin-top: 15px;
+  font-style: italic;
+  font-size: 0.9em;
+  color: var(--text-color);
+}
+
+.zygio-kortele .register-button {
+  background-color: var(--accent-color);
+  color: #131a23;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.1em;
+  margin-top: 15px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.zygio-kortele .register-button:hover {
+  filter: brightness(1.1);
+}
+
+.zygio-kortele .status-full,
+.zygio-kortele .status-cancelled {
+  font-weight: bold;
+  margin-top: 15px;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.zygio-kortele .status-full {
+  color: orange;
+  border: 1px solid orange;
+}
+
+.zygio-kortele .status-cancelled {
+  color: red;
+  border: 1px solid red;
+}
+
+.registration-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.registration-form {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+  max-width: 500px;
+  width: 90%;
+  color: #333;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.registration-form.dark {
+  background-color: #131a23;
+  color: #ece530;
+}
+
+.registration-form h2 {
+  font-size: 2em;
+  margin-bottom: 25px;
+  text-align: center;
+  color: #131a23;
+}
+
+.registration-form .form-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.registration-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.registration-form input[type="text"],
+.registration-form input[type="tel"],
+.registration-form input[type="email"] {
+  width: calc(100% - 20px);
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1em;
+  background-color: inherit;
+  color: inherit;
+}
+
+.registration-form input:focus {
+  border-color: var(--accent-color);
+  outline: none;
+}
+
+.registration-form .form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 25px;
+}
+
+.registration-form button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.registration-form .submit-button {
+  background-color: var(--accent-color);
+  color: #131a23;
+}
+
+.registration-form .submit-button:hover {
+  filter: brightness(1.1);
+}
+
+.registration-form .cancel-button {
+  background-color: #ccc;
+  color: #333;
+}
+
+.registration-form .cancel-button:hover {
+  background-color: #bbb;
+}
+
+@media (max-width: 768px) {
+  .zygiai-kalendorius-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .zygio-kortele {
+    padding: 20px;
+  }
+
+  .registration-form {
+    padding: 20px;
+  }
+
+  .registration-form h2 {
+    font-size: 1.5em;
+  }
+}
+
+.event-image-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 40px auto;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.event-hero-image {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .event-image-container {
+    margin: 20px auto;
+    border-radius: 5px;
+  }
+  .event-hero-image {
+    height: 250px;
+  }
+}
+
+.zygis-main-card-photo-wrapper {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.zygis-main-card-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.zygis-card {
+    padding: 20px;
+}
+
+@media (max-width: 768px) {
+  .zygis-main-card-photo-wrapper {
+    height: 150px;
+  }
+}
+
+.zygio-kortele-foto-wrapper {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.zygio-kortele-foto {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.zygio-kortele {
+    padding-top: 0;
+}
+
+@media (max-width: 768px) {
+  .zygio-kortele-foto-wrapper {
+    height: 150px;
+  }
+}
+
+/* src/pages/ZygiaiPage.css */
+
+.zygiai-page {
+  padding: 40px 20px;
+  text-align: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  min-height: calc(100vh - var(--navigation-height, 80px) - var(--footer-height, 100px)); /* Apskaičiuotas min aukštis */
+  box-sizing: border-box; /* Svarbu, kad padding nepadidintų aukščio */
+}
+
+/* Temų spalvų pritaikymas puslapiui (jei norite perrašyti globalius nustatymus) */
+.zygiai-page.light {
+  background-color: var(--bg-color); /* Naudojame šviesios temos fono spalvą */
+  color: var(--text-color); /* Naudojame šviesios temos teksto spalvą */
+}
+
+.zygiai-page.dark {
+  background-color: var(--bg-color); /* Naudojame tamsios temos fono spalvą */
+  color: var(--text-color); /* Naudojame tamsios temos teksto spalvą */
+}
+
+.zygiai-page h1 {
+  font-size: 2.8em;
+  margin-bottom: 20px;
+}
+
+.zygiai-page p {
+  font-size: 1.1em;
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+/* Žygių galerijos tinklelis */
+.zygiai-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Prisitaikantis tinklelis */
+  gap: 30px; /* Tarpas tarp kortelių */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 40px; /* Vietos apačioje, kad neklijuotų prie footerio */
+}
+
+/* Žygio kortelės stilius */
+.zygis-card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Stumia turinį į viršų ir apačią */
+}
+
+.zygis-card:hover {
+  transform: translateY(-5px); /* Švelnus pakilimas užvedus pelyte */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.zygis-card h3 {
+  font-size: 1.8em;
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: var(--accent-color); /* Antraštės spalva iš temos akcento */
+}
+
+.zygis-card p {
+  font-size: 0.95em;
+  margin-bottom: 8px;
+  line-height: 1.4;
+  color: inherit; /* Paima spalvą iš kortelės teksto */
+}
+
+/* Karuselės konteineris */
+.zygis-carousel-container {
+  position: relative;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  overflow: hidden; /* Užtikrina, kad nuotraukos neapibrėžtų kraštų */
+  max-height: 250px; /* Nustatykite maksimalų karuselės aukštį */
+}
+
+.zygis-carousel-container img.zygis-foto {
+  width: 100%;
+  height: 250px; /* Fiksuotas nuotraukos aukštis */
+  object-fit: cover; /* Apkirps nuotrauką, kad užpildytų plotą */
+  border-radius: 8px;
+}
+
+/* Nuotraukų numerio skaitiklis */
+.image-counter {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.8em;
+  z-index: 10; /* Virš karuselės */
+}
+
+/* react-slick perrašymai */
+.slick-prev:before,
+.slick-next:before {
+  color: var(--accent-color) !important; /* Rodyklių spalva iš temos akcento */
+  font-size: 30px !important; /* Rodyklių dydis */
+}
+
+.slick-dots li button:before {
+  color: var(--accent-color) !important; /* Taškų spalva iš temos akcento */
+  font-size: 10px !important; /* Taškų dydis */
+}
+
+.slick-dots li.slick-active button:before {
+  color: var(--text-color) !important; /* Aktyvaus taško spalva */
+}
+
+.zygis-details p {
+  margin-bottom: 5px; /* Mažesnis tarpas tarp detalių eilučių */
+}
+
+/* Kortelės temos */
+.zygis-card.light {
+  background-color: #ffffff; /* Balta kortelės fono spalva šviesioje temoje */
+  color: #333; /* Tamsus tekstas šviesioje temoje */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.zygis-card.dark {
+  background-color: #333; /* Tamsi kortelės fono spalva tamsioje temoje */
+  color: #f0f0f0; /* Šviesus tekstas tamsioje temoje */
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+}
+
+/* Prisitaikymas prie mažesnių ekranų */
+@media (max-width: 768px) {
+  .zygiai-page {
+    padding: 20px 10px;
+  }
+
+  .zygiai-page h1 {
+    font-size: 2em;
+  }
+
+  .zygiai-page p {
+    font-size: 1em;
+  }
+
+  .zygis-card {
+    padding: 20px;
+  }
+}
+
+/* src/index.css */
+
+/* ... esami stiliai ... */
+
+.kontaktai-page {
+  min-height: calc(100vh - var(--navigation-height, 80px) - var(--footer-height, 100px));
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 50px;
+}
+
+.kontaktai-page h1 {
+    margin-bottom: 25px;
+    color: var(--accent-color);
+}
+
+.contact-details {
+    max-width: 600px;
+    width: 100%;
+    text-align: left;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    line-height: 1.8;
+}
+
+.contact-details p {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+.contact-details a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact-details a:hover {
+    text-decoration: underline;
+}
+
+.payment-info {
+    margin-top: 25px;
+    padding: 15px;
+    border: 1px solid var(--accent-color);
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.05);
+    font-size: 0.95em;
+    line-height: 1.5;
+}
+
+.payment-info strong {
+    color: var(--text-color);
+}
+
+.contact-icon {
+    margin-right: 10px;
+    font-size: 1.2em;
+    color: var(--accent-color);
+    flex-shrink: 0;
+}
+
+.payment-info .contact-icon {
+    font-size: 1.4em;
+    align-self: flex-start;
+}
+
+@media (max-width: 768px) {
+    .kontaktai-page {
+        padding-top: 30px;
+    }
+    .contact-details {
+        padding: 20px;
+        font-size: 1em;
+    }
+    .payment-info {
+        font-size: 0.9em;
+    }
+}
+
+/* src/index.css */
+
+/* ... visi jau esami stiliai ... */
+
+
+/* Registracijos patvirtinimo modalas */
+.registration-confirmation-modal {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.4);
+  max-width: 550px;
+  width: 90%;
+  text-align: center;
+  color: #333;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  position: relative;
+}
+
+.registration-confirmation-modal.dark {
+  background-color: #444;
+  color: #f0f0f0;
+}
+
+.registration-confirmation-modal h2 {
+  font-size: 2.2em;
+  margin-bottom: 20px;
+  color: var(--accent-color);
+}
+
+.registration-confirmation-modal h3 {
+  font-size: 1.5em;
+  margin-top: 25px;
+  margin-bottom: 15px;
+  color: var(--text-color);
+}
+
+.registration-confirmation-modal ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto 20px auto;
+  max-width: 300px;
+  text-align: left;
+}
+
+.registration-confirmation-modal ul li {
+  margin-bottom: 8px;
+  font-size: 1.05em;
+}
+
+.email-send-section {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+}
+
+.email-send-section p {
+  margin-bottom: 10px;
+  font-size: 1em;
+}
+
+.email-input {
+  width: calc(100% - 100px);
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1em;
+  margin-right: 10px;
+  background-color: inherit;
+  color: inherit;
+}
+
+.send-email-button {
+  background-color: var(--accent-color);
+  color: var(--text-color);
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.2s ease, filter 0.2s ease;
+}
+
+.send-email-button:hover {
+  filter: brightness(1.1);
+}
+
+.email-status-message {
+  margin-top: 10px;
+  font-size: 0.9em;
+  font-weight: bold;
+  color: green;
+}
+
+.close-modal-button {
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.1em;
+  margin-top: 30px;
+  transition: background-color 0.2s ease;
+}
+
+.close-modal-button:hover {
+  background-color: #5a6268;
+}
+
+/* Modal responsyvumas */
+@media (max-width: 600px) {
+  .registration-confirmation-modal {
+    padding: 20px;
+    width: 95%;
+  }
+  .registration-confirmation-modal h2 {
+    font-size: 1.8em;
+  }
+  .registration-confirmation-modal h3 {
+    font-size: 1.3em;
+  }
+  .email-input {
+    width: calc(100% - 80px);
+    margin-right: 5px;
+  }
+  .send-email-button {
+    padding: 10px 10px;
+  }
+}
