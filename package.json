@@ -8,8 +8,7 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "postinstall": "chmod +x ./node_modules/.bin/*"  <-- ŠI EILUTĖ TURI BŪTI ČIA!
-  },
+    "postinstall": "chmod +x ./node_modules/.bin/*"    },
   "dependencies": {
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
