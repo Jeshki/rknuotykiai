@@ -15,26 +15,26 @@ function KontaktaiPage() {
         </p>
         <p>
           <FaPhone className="contact-icon" /> 
-          <strong>Telefonas:</strong> <a href="tel:+37068214393">(8-682) 14393</a>
+          <strong>Telefonas:</strong> <a href="tel:+37068214393" className="text-link-color">(0-682) 14393</a>
         </p>
         <p>
           <FaEnvelope className="contact-icon" /> 
-          <strong>El. paštas:</strong> <a href="mailto:rknuotykiai@gmail.com">rknuotykiai@gmail.com</a>
+          <strong>El. paštas:</strong> <a href="mailto:rknuotykiai@gmail.com" className="text-link-color">rknuotykiai@gmail.com</a>
         </p>
-        {/* <<-- PATAISYTA MOKĖJIMO INFORMACIJOS STRUKTŪRA -->> */}
         <div className="payment-info">
           <p className="payment-info-line">
             <FaMoneyBillAlt className="contact-icon payment-icon" /> 
-            <strong>Mokestis pervedamas į sąskaitą:</strong> LT887300010176526444 (Swedbank)
+            <strong>Mokestis pervedamas į sąskaitą:</strong> 
+            LT887300010176526444 (Swedbank)
           </p>
           <p className="payment-info-line">
-            <strong>Gavėjas:</strong> Rolandas Kriugžda (individualios veiklos pažyma nr. 1224311)
+            <strong>Gavėjas:</strong>
+            Rolandas Kriugžda (individualios veiklos pažyma nr. 1224311)
           </p>
           <p className="payment-info-line">
-            <strong>Mokėjimo paskirtis:</strong> Nurodykite – Miesta/Data, vardas, pavardė.
+            <strong>Mokėjimo paskirtis:</strong>Nurodykite – Miesta/Data, vardas, pavardė.
           </p>
         </div>
-        {/* <<-- PABAIGA PATAISYMO -->> */}
       </div>
     </div>
   );

@@ -1,56 +1,70 @@
+/* Import Google Fonts: Open Sans for body text, Roboto for headings */
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:wght@100;300;400;500;700;900&display=swap');
 
+/* Import Tailwind CSS base, components, and utilities layers for quick styling */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-.theme-light {
-  --bg-color: #f6ef31;
-  --text-color: #131a23;
-  --accent-color: #f6ef31;
+/* Define CSS variables for the light theme, used throughout the application */
+:root {
+  --bg-color: #eeea2d; /* A slightly muted yellow for the background in light mode */
+  --text-color: #131a23; /* A dark blue/black for main text */
+  --accent-color: #131a23; /* Dark blue/black for accent elements to ensure good contrast with light background */
+  --navigation-height: 80px; /* Standard height for the navigation bar */
+  --footer-height: 100px; /* Standard height for the footer */
 }
 
-.theme-dark {
-  --bg-color: #131a23;
-  --text-color: #f6ef31;
-  --accent-color:  #131a23;
+/* Define CSS variables for the dark theme, applied when the 'dark' class is present on the body or html */
+.dark {
+  --bg-color: #0d1218; /* An even darker blue/black for the background in dark mode */
+  --text-color: #f6ef31; /* Bright yellow for main text */
+  --accent-color: #f6ef31; /* Bright yellow for accent elements to ensure good contrast with dark background */
 }
 
+/* Global styling for HTML, body, and the root div where the React app mounts */
 html, body, #root {
-  height: 100%;
-  margin: 0;
-  padding: 0;
+  height: 100%; /* Ensures these elements take full viewport height */
+  margin: 0; /* Removes default browser margin */
+  padding: 0; /* Removes default browser padding */
 }
 
+/* Main body styling: applies theme-dependent background, text color, smooth transitions, and global font */
 body {
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  transition: background-color 0.3s ease, color 0.3s ease;
-  font-family: 'Open Sans', sans-serif;
+  background-color: var(--bg-color); /* Sets background based on current theme */
+  color: var(--text-color); /* Sets text color based on current theme */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for theme changes */
+  font-family: 'Open Sans', sans-serif; /* Applies Open Sans as the primary font */
 }
 
+/* Font family for headings */
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Roboto', sans-serif;
 }
 
+/* Main application container for flex layout */
 .app-container {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
+/* Content area that takes available space */
 .content {
   flex: 1;
 }
 
+/* Accent text color utility */
 .text-accent {
   color: var(--accent-color);
 }
 
+/* Accent background color utility */
 .bg-accent {
   background-color: var(--accent-color);
 }
 
+/* Footer styling */
 .footer {
   padding: 20px;
   text-align: center;
@@ -59,16 +73,19 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Light theme specific footer styles */
 .footer.light {
-  background-color: #131a23;
-  color: #f6ef31;
+  background-color: var(--text-color);
+  color: var(--bg-color);
 }
 
+/* Dark theme specific footer styles */
 .footer.dark {
-  background-color: #f6ef31;
-  color: #131a23;
+  background-color: var(--bg-color);
+  color: var(--text-color);
 }
 
+/* Footer content wrapper */
 .footer-content {
   max-width: 1200px;
   margin: 0 auto;
@@ -77,10 +94,12 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
 }
 
+/* Footer navigation links container */
 .footer-links {
   margin-top: 10px;
 }
 
+/* Footer link styling */
 .footer-links a {
   color: inherit;
   text-decoration: none;
@@ -88,10 +107,12 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 500;
 }
 
+/* Hover effect for footer links */
 .footer-links a:hover {
   text-decoration: underline;
 }
 
+/* Responsive adjustments for footer links on smaller screens */
 @media (max-width: 768px) {
   .footer-links {
     flex-direction: column;
@@ -102,6 +123,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+/* Video container styling */
 .video-container {
   position: relative;
   width: 100%;
@@ -113,6 +135,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 20px;
 }
 
+/* Background video styling */
 .background-video {
   width: 100%;
   height: 100%;
@@ -123,6 +146,7 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 1;
 }
 
+/* Video overlay styling */
 .video-overlay {
   position: relative;
   z-index: 2;
@@ -133,65 +157,76 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 8px;
 }
 
+/* Heading style within video overlay */
 .video-overlay h2 {
   font-size: 2.5em;
   margin-bottom: 10px;
 }
 
+/* Paragraph style within video overlay */
 .video-overlay p {
   font-size: 1.2em;
 }
 
+/* About Me page light theme styling */
 .apie-mane-page.light {
   background-color: var(--bg-color);
   color: var(--text-color);
 }
 
+/* About Me page dark theme styling */
 .apie-mane-page.dark {
   background-color: var(--bg-color);
   color: var(--text-color);
 }
 
+/* Upcoming Events page styling */
 .artimiausi-renginiai-page {
   padding: 40px 20px;
   text-align: center;
   transition: background-color 0.3s ease, color 0.3s ease;
-  min-height: calc(100vh - var(--navigation-height, 80px) - var(--footer-height, 100px));
+  min-height: calc(100vh - var(--navigation-height) - var(--footer-height));
   box-sizing: border-box;
 }
 
+/* Upcoming Events page light theme styling */
 .artimiausi-renginiai-page.light {
   background-color: var(--bg-color);
   color: var(--text-color);
 }
 
+/* Upcoming Events page dark theme styling */
 .artimiausi-renginiai-page.dark {
   background-color: var(--bg-color);
   color: var(--text-color);
 }
 
+/* Heading style for Upcoming Events page */
 .artimiausi-renginiai-page h1 {
   font-size: 2.8em;
   margin-bottom: 20px;
 }
 
+/* Paragraph style for Upcoming Events page */
 .artimiausi-renginiai-page p {
   font-size: 1.1em;
   margin-bottom: 40px;
   line-height: 1.6;
 }
 
+/* Grid layout for hiking calendar */
 .zygiai-kalendorius-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 30px;
   max-width: 1200px;
   margin: 0 auto;
-  padding-bottom: 40px; 
+  padding-bottom: 40px;
 }
 
+/* Hiking card styling */
 .zygio-kortele {
-  background-color: #ffffff;
+  background-color: var(--bg-color);
   border-radius: 10px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   padding: 25px;
@@ -202,17 +237,20 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: space-between;
 }
 
+/* Hover effect for hiking card */
 .zygio-kortele:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }
 
+/* Dark theme specific hiking card styling */
 .zygio-kortele.dark {
-  background-color: #333;
-  color: #f0f0f0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
   box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
 }
 
+/* Heading style for hiking card */
 .zygio-kortele h3 {
   font-size: 1.8em;
   margin-top: 0;
@@ -220,12 +258,14 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--accent-color);
 }
 
+/* Paragraph style for hiking card */
 .zygio-kortele p {
   font-size: 0.95em;
   margin-bottom: 8px;
   line-height: 1.4;
 }
 
+/* Description paragraph style for hiking card */
 .zygio-kortele p.description {
   margin-top: 15px;
   font-style: italic;
@@ -233,9 +273,10 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--text-color);
 }
 
+/* Register button styling for hiking card */
 .zygio-kortele .register-button {
   background-color: var(--accent-color);
-  color: #131a23;
+  color: var(--bg-color); /* Changed for contrast */
   border: none;
   padding: 10px 20px;
   border-radius: 5px;
@@ -245,10 +286,12 @@ h1, h2, h3, h4, h5, h6 {
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
+/* Hover effect for register button */
 .zygio-kortele .register-button:hover {
   filter: brightness(1.1);
 }
 
+/* Status styling for full or cancelled hiking cards */
 .zygio-kortele .status-full,
 .zygio-kortele .status-cancelled {
   font-weight: bold;
@@ -257,16 +300,19 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 5px;
 }
 
+/* Styling for full status */
 .zygio-kortele .status-full {
   color: orange;
   border: 1px solid orange;
 }
 
+/* Styling for cancelled status */
 .zygio-kortele .status-cancelled {
   color: red;
   border: 1px solid red;
 }
 
+/* Registration overlay styling */
 .registration-overlay {
   position: fixed;
   top: 0;
@@ -280,40 +326,46 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 1000;
 }
 
+/* Registration form styling */
 .registration-form {
-  background-color: #ffffff;
+  background-color: var(--bg-color);
   padding: 30px;
   border-radius: 10px;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
   max-width: 500px;
   width: 90%;
-  color: #333;
+  color: var(--text-color);
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+/* Dark theme specific registration form styling */
 .registration-form.dark {
-  background-color: #131a23;
-  color: #ece530;
+  background-color: var(--bg-color);
+  color: var(--text-color);
 }
 
+/* Heading style for registration form */
 .registration-form h2 {
   font-size: 2em;
   margin-bottom: 25px;
   text-align: center;
-  color: #131a23;
+  color: var(--text-color);
 }
 
+/* Form group styling within registration form */
 .registration-form .form-group {
   margin-bottom: 15px;
   text-align: left;
 }
 
+/* Label styling within registration form */
 .registration-form label {
   display: block;
   margin-bottom: 5px;
   font-weight: bold;
 }
 
+/* Input field styling within registration form */
 .registration-form input[type="text"],
 .registration-form input[type="tel"],
 .registration-form input[type="email"] {
@@ -326,11 +378,13 @@ h1, h2, h3, h4, h5, h6 {
   color: inherit;
 }
 
+/* Focus effect for input fields */
 .registration-form input:focus {
   border-color: var(--accent-color);
   outline: none;
 }
 
+/* Form actions container */
 .registration-form .form-actions {
   display: flex;
   justify-content: flex-end;
@@ -338,6 +392,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 25px;
 }
 
+/* Button styling within registration form */
 .registration-form button {
   padding: 10px 20px;
   border: none;
@@ -347,24 +402,29 @@ h1, h2, h3, h4, h5, h6 {
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
+/* Submit button styling */
 .registration-form .submit-button {
   background-color: var(--accent-color);
-  color: #131a23;
+  color: var(--bg-color); /* Changed for contrast */
 }
 
+/* Hover effect for submit button */
 .registration-form .submit-button:hover {
   filter: brightness(1.1);
 }
 
+/* Cancel button styling */
 .registration-form .cancel-button {
   background-color: #ccc;
   color: #333;
 }
 
+/* Hover effect for cancel button */
 .registration-form .cancel-button:hover {
   background-color: #bbb;
 }
 
+/* Responsive adjustments for forms and cards on smaller screens */
 @media (max-width: 768px) {
   .zygiai-kalendorius-grid {
     grid-template-columns: 1fr;
@@ -383,6 +443,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+/* Event image container styling */
 .event-image-container {
   width: 100%;
   max-width: 900px;
@@ -392,6 +453,7 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
 }
 
+/* Event hero image styling */
 .event-hero-image {
   width: 100%;
   height: 350px;
@@ -399,6 +461,7 @@ h1, h2, h3, h4, h5, h6 {
   display: block;
 }
 
+/* Responsive adjustments for event image container on smaller screens */
 @media (max-width: 768px) {
   .event-image-container {
     margin: 20px auto;
@@ -409,6 +472,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+/* Wrapper for main hiking card photo */
 .zygis-main-card-photo-wrapper {
   width: 100%;
   height: 200px;
@@ -418,6 +482,7 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Styling for main hiking card photo */
 .zygis-main-card-photo {
   width: 100%;
   height: 100%;
@@ -425,16 +490,19 @@ h1, h2, h3, h4, h5, h6 {
   display: block;
 }
 
+/* Base styling for hiking card */
 .zygis-card {
-    padding: 20px;
+  padding: 20px;
 }
 
+/* Responsive adjustments for main hiking card photo on smaller screens */
 @media (max-width: 768px) {
   .zygis-main-card-photo-wrapper {
     height: 150px;
   }
 }
 
+/* Wrapper for hiking card photo */
 .zygio-kortele-foto-wrapper {
   width: 100%;
   height: 180px;
@@ -444,6 +512,7 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Styling for hiking card photo */
 .zygio-kortele-foto {
   width: 100%;
   height: 100%;
@@ -451,61 +520,65 @@ h1, h2, h3, h4, h5, h6 {
   display: block;
 }
 
+/* Padding adjustment for hiking card */
 .zygio-kortele {
-    padding-top: 0;
+  padding-top: 0;
 }
 
+/* Responsive adjustments for hiking card photo on smaller screens */
 @media (max-width: 768px) {
   .zygio-kortele-foto-wrapper {
     height: 150px;
   }
 }
 
-/* src/pages/ZygiaiPage.css */
-
+/* Styling for Zygiai page */
 .zygiai-page {
   padding: 40px 20px;
   text-align: center;
   transition: background-color 0.3s ease, color 0.3s ease;
-  min-height: calc(100vh - var(--navigation-height, 80px) - var(--footer-height, 100px)); /* Apskaičiuotas min aukštis */
-  box-sizing: border-box; /* Svarbu, kad padding nepadidintų aukščio */
+  min-height: calc(100vh - var(--navigation-height) - var(--footer-height));
+  box-sizing: border-box;
 }
 
-/* Temų spalvų pritaikymas puslapiui (jei norite perrašyti globalius nustatymus) */
+/* Light theme specific Zygiai page styling */
 .zygiai-page.light {
-  background-color: var(--bg-color); /* Naudojame šviesios temos fono spalvą */
-  color: var(--text-color); /* Naudojame šviesios temos teksto spalvą */
+  background-color: var(--bg-color);
+  color: var(--text-color);
 }
 
+/* Dark theme specific Zygiai page styling */
 .zygiai-page.dark {
-  background-color: var(--bg-color); /* Naudojame tamsios temos fono spalvą */
-  color: var(--text-color); /* Naudojame tamsios temos teksto spalvą */
+  background-color: var(--bg-color);
+  color: var(--text-color);
 }
 
+/* Heading style for Zygiai page */
 .zygiai-page h1 {
   font-size: 2.8em;
   margin-bottom: 20px;
 }
 
+/* Paragraph style for Zygiai page */
 .zygiai-page p {
   font-size: 1.1em;
   margin-bottom: 40px;
   line-height: 1.6;
 }
 
-/* Žygių galerijos tinklelis */
+/* Grid layout for hiking gallery */
 .zygiai-gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Prisitaikantis tinklelis */
-  gap: 30px; /* Tarpas tarp kortelių */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
   max-width: 1200px;
   margin: 0 auto;
-  padding-bottom: 40px; /* Vietos apačioje, kad neklijuotų prie footerio */
+  padding-bottom: 40px;
 }
 
-/* Žygio kortelės stilius */
+/* Hiking card base styling */
 .zygis-card {
-  background-color: #ffffff;
+  background-color: var(--bg-color);
   border-radius: 10px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   padding: 25px;
@@ -513,45 +586,49 @@ h1, h2, h3, h4, h5, h6 {
   transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Stumia turinį į viršų ir apačią */
+  justify-content: space-between;
 }
 
+/* Hover effect for hiking card */
 .zygis-card:hover {
-  transform: translateY(-5px); /* Švelnus pakilimas užvedus pelyte */
+  transform: translateY(-5px);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }
 
+/* Heading style for hiking card */
 .zygis-card h3 {
   font-size: 1.8em;
   margin-top: 0;
   margin-bottom: 15px;
-  color: var(--accent-color); /* Antraštės spalva iš temos akcento */
+  color: var(--accent-color);
 }
 
+/* Paragraph style for hiking card */
 .zygis-card p {
   font-size: 0.95em;
   margin-bottom: 8px;
   line-height: 1.4;
-  color: inherit; /* Paima spalvą iš kortelės teksto */
+  color: inherit;
 }
 
-/* Karuselės konteineris */
+/* Carousel container for hiking images */
 .zygis-carousel-container {
   position: relative;
   margin-bottom: 20px;
   border-radius: 8px;
-  overflow: hidden; /* Užtikrina, kad nuotraukos neapibrėžtų kraštų */
-  max-height: 250px; /* Nustatykite maksimalų karuselės aukštį */
+  overflow: hidden;
+  max-height: 250px;
 }
 
+/* Styling for hiking image within carousel */
 .zygis-carousel-container img.zygis-foto {
   width: 100%;
-  height: 250px; /* Fiksuotas nuotraukos aukštis */
-  object-fit: cover; /* Apkirps nuotrauką, kad užpildytų plotą */
+  height: 250px;
+  object-fit: cover;
   border-radius: 8px;
 }
 
-/* Nuotraukų numerio skaitiklis */
+/* Image counter styling within carousel */
 .image-counter {
   position: absolute;
   bottom: 10px;
@@ -561,43 +638,47 @@ h1, h2, h3, h4, h5, h6 {
   padding: 5px 10px;
   border-radius: 5px;
   font-size: 0.8em;
-  z-index: 10; /* Virš karuselės */
+  z-index: 10;
 }
 
-/* react-slick perrašymai */
+/* Previous button styling for slick carousel */
 .slick-prev:before,
 .slick-next:before {
-  color: var(--accent-color) !important; /* Rodyklių spalva iš temos akcento */
-  font-size: 30px !important; /* Rodyklių dydis */
+  color: var(--accent-color) !important;
+  font-size: 30px !important;
 }
 
+/* Dot navigation styling for slick carousel */
 .slick-dots li button:before {
-  color: var(--accent-color) !important; /* Taškų spalva iš temos akcento */
-  font-size: 10px !important; /* Taškų dydis */
+  color: var(--accent-color) !important;
+  font-size: 10px !important;
 }
 
+/* Active dot styling for slick carousel */
 .slick-dots li.slick-active button:before {
-  color: var(--text-color) !important; /* Aktyvaus taško spalva */
+  color: var(--text-color) !important;
 }
 
+/* Details paragraph styling for hiking cards */
 .zygis-details p {
-  margin-bottom: 5px; /* Mažesnis tarpas tarp detalių eilučių */
+  margin-bottom: 5px;
 }
 
-/* Kortelės temos */
+/* Light theme specific hiking card styling */
 .zygis-card.light {
-  background-color: #ffffff; /* Balta kortelės fono spalva šviesioje temoje */
-  color: #333; /* Tamsus tekstas šviesioje temoje */
+  background-color: var(--bg-color);
+  color: var(--text-color);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
+/* Dark theme specific hiking card styling */
 .zygis-card.dark {
-  background-color: #333; /* Tamsi kortelės fono spalva tamsioje temoje */
-  color: #f0f0f0; /* Šviesus tekstas tamsioje temoje */
+  background-color: var(--bg-color);
+  color: var(--text-color);
   box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
 }
 
-/* Prisitaikymas prie mažesnių ekranų */
+/* Responsive adjustments for Zygiai page on smaller screens */
 @media (max-width: 768px) {
   .zygiai-page {
     padding: 20px 10px;
@@ -616,123 +697,132 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/* src/index.css */
-
-/* ... esami stiliai ... */
-
+/* Styling for Kontaktai page */
 .kontaktai-page {
-  min-height: calc(100vh - var(--navigation-height, 80px) - var(--footer-height, 100px));
+  min-height: calc(100vh - var(--navigation-height) - var(--footer-height));
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
-  padding-top: 50px;
+  justify-content: center; /* Centers content vertically on the page */
+  padding-top: 50px; /* Provides space from the top */
 }
 
+/* Heading style for Kontaktai page */
 .kontaktai-page h1 {
-    margin-bottom: 25px;
-    color: var(--accent-color);
+  margin-bottom: 25px;
+  color: var(--accent-color);
 }
 
+/* Contact details container styling */
 .contact-details {
-    max-width: 600px;
-    width: 100%;
-    text-align: left;
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    line-height: 1.8;
+  max-width:700px;
+  width: 100%;
+  text-align: left;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  line-height: 1.8;
 }
 
+/* Paragraph styling within contact details */
 .contact-details p {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-    font-size: 1.1em;
+  display: flex;
+  align-items: flex-start; /* Aligns icon with the top of the line */
+  margin-bottom: 10px;
+  font-size: 1.1em;
 }
 
+/* Link styling within contact details */
 .contact-details a {
-    color: var(--accent-color);
-    text-decoration: none;
-    font-weight: bold;
+  color: var(--accent-color); /* Uses accent color for links */
+  text-decoration: none;
+  font-weight: bold;
+  word-break: break-all;
 }
 
+/* Hover effect for contact links */
 .contact-details a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
+/* Payment information section styling */
 .payment-info {
-    margin-top: 25px;
-    padding: 15px;
-    border: 1px solid var(--accent-color);
-    border-radius: 8px;
-    background-color: rgba(0, 0, 0, 0.05);
-    font-size: 0.95em;
-    line-height: 1.5;
+  margin-top: 25px;
+  padding: 15px;
+  border: 1px solid var(--accent-color);
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.05);
+  font-size: 0.95em;
+  line-height: 1.5;
 }
 
+/* Strong text styling within payment info */
 .payment-info strong {
-    color: var(--text-color);
+  color: var(--text-color);
 }
 
+/* General contact icon styling */
 .contact-icon {
-    margin-right: 10px;
-    font-size: 1.2em;
-    color: var(--accent-color);
-    flex-shrink: 0;
+  margin-right: 10px;
+  font-size: 1.2em;
+  color: var(--accent-color);
+  flex-shrink: 0;
+  position: relative;
+  top: 0.15em; /* Fine-tune icon vertical alignment */
 }
 
+/* Payment info specific icon styling */
 .payment-info .contact-icon {
-    font-size: 1.4em;
-    align-self: flex-start;
+  font-size: 1.4em;
+  align-self: flex-start;
+  top: 0.1em; /* Fine-tune icon vertical alignment for larger icon */
 }
 
+/* Responsive adjustments for Kontaktai page on smaller screens */
 @media (max-width: 768px) {
-    .kontaktai-page {
-        padding-top: 30px;
-    }
-    .contact-details {
-        padding: 20px;
-        font-size: 1em;
-    }
-    .payment-info {
-        font-size: 0.9em;
-    }
+  .kontaktai-page {
+    padding-top: 30px; /* Reduced top padding for smaller screens */
+  }
+  .contact-details {
+    padding: 20px;
+    font-size: 1em;
+  }
+  .payment-info {
+    font-size: 0.9em;
+  }
 }
 
-/* src/index.css */
-
-/* ... visi jau esami stiliai ... */
-
-
-/* Registracijos patvirtinimo modalas */
+/* Registration confirmation modal styling */
 .registration-confirmation-modal {
-  background-color: #ffffff;
+  background-color: var(--bg-color);
   padding: 30px;
   border-radius: 10px;
   box-shadow: 0 5px 25px rgba(0, 0, 0, 0.4);
   max-width: 550px;
   width: 90%;
   text-align: center;
-  color: #333;
+  color: var(--text-color);
   transition: background-color 0.3s ease, color 0.3s ease;
   position: relative;
 }
 
+/* Dark theme specific modal styling */
 .registration-confirmation-modal.dark {
-  background-color: #444;
-  color: #f0f0f0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
 }
 
+/* Heading style for modal */
 .registration-confirmation-modal h2 {
   font-size: 2.2em;
   margin-bottom: 20px;
   color: var(--accent-color);
 }
 
+/* Sub-heading style for modal */
 .registration-confirmation-modal h3 {
   font-size: 1.5em;
   margin-top: 25px;
@@ -740,6 +830,7 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--text-color);
 }
 
+/* List styling within modal */
 .registration-confirmation-modal ul {
   list-style: none;
   padding: 0;
@@ -748,22 +839,26 @@ h1, h2, h3, h4, h5, h6 {
   text-align: left;
 }
 
+/* List item styling within modal */
 .registration-confirmation-modal ul li {
   margin-bottom: 8px;
   font-size: 1.05em;
 }
 
+/* Email send section styling */
 .email-send-section {
   margin-top: 30px;
   padding-top: 20px;
   border-top: 1px solid #eee;
 }
 
+/* Paragraph style within email send section */
 .email-send-section p {
   margin-bottom: 10px;
   font-size: 1em;
 }
 
+/* Email input field styling */
 .email-input {
   width: calc(100% - 100px);
   padding: 10px;
@@ -775,6 +870,7 @@ h1, h2, h3, h4, h5, h6 {
   color: inherit;
 }
 
+/* Send email button styling */
 .send-email-button {
   background-color: var(--accent-color);
   color: var(--text-color);
@@ -786,10 +882,12 @@ h1, h2, h3, h4, h5, h6 {
   transition: background-color 0.2s ease, filter 0.2s ease;
 }
 
+/* Hover effect for send email button */
 .send-email-button:hover {
   filter: brightness(1.1);
 }
 
+/* Email status message styling */
 .email-status-message {
   margin-top: 10px;
   font-size: 0.9em;
@@ -797,6 +895,7 @@ h1, h2, h3, h4, h5, h6 {
   color: green;
 }
 
+/* Close modal button styling */
 .close-modal-button {
   background-color: #6c757d;
   color: white;
@@ -809,11 +908,12 @@ h1, h2, h3, h4, h5, h6 {
   transition: background-color 0.2s ease;
 }
 
+/* Hover effect for close modal button */
 .close-modal-button:hover {
   background-color: #5a6268;
 }
 
-/* Modal responsyvumas */
+/* Responsive adjustments for modal on smaller screens */
 @media (max-width: 600px) {
   .registration-confirmation-modal {
     padding: 20px;
