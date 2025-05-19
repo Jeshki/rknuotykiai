@@ -13,7 +13,7 @@
 .theme-dark {
   --bg-color: #131a23;
   --text-color: #f6ef31;
-  --accent-color: #f6ef31;
+  --accent-color:  #131a23;
 }
 
 html, body, #root {

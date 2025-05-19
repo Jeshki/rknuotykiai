@@ -14,7 +14,7 @@ function Navigation() {
 
   const bgColor = theme === 'light' ? 'bg-very-dark-gray' : 'bg-accentYellow';
   const textColorDesktop = theme === 'light' ? 'text-accentYellow' : 'text-very-dark-gray';
-  const textColorMobile = theme === 'light' ? 'text-very-dark-gray' : 'text-white';
+  const textColorMobile = theme === 'light' ? 'text-accentYellow' : 'text-very-dark-gray';
 
   const activeLinkColor = theme === 'light' ? 'text-accentYellow' : 'text-very-dark-gray';
 
