@@ -1,5 +1,5 @@
 /* Import Google Fonts: Open Sans for body text, Roboto for headings */
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Advent+Pro:wght@100..900&display=swap');
 
 /* Import Tailwind CSS base, components, and utilities layers for quick styling */
 @tailwind base;
@@ -31,15 +31,14 @@ html, body, #root {
 
 /* Main body styling: applies theme-dependent background, text color, smooth transitions, and global font */
 body {
-  background-color: var(--bg-color); /* Sets background based on current theme */
-  color: var(--text-color); /* Sets text color based on current theme */
-  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for theme changes */
-  font-family: 'Open Sans', sans-serif; /* Applies Open Sans as the primary font */
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-family: 'Advent Pro', sans-serif; /* Pritaikytas naujas šriftas */
 }
 
-/* Font family for headings */
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Advent Pro', sans-serif; /* Pritaikytas naujas šriftas */
 }
 
 /* Main application container for flex layout */
@@ -127,7 +126,7 @@ h1, h2, h3, h4, h5, h6 {
 .video-container {
   position: relative;
   width: 100%;
-  height: 50vh;
+  height: 70vh;
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -862,7 +861,7 @@ h1, h2, h3, h4, h5, h6 {
 .email-input {
   width: calc(100% - 100px);
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #0d1218;
   border-radius: 5px;
   font-size: 1em;
   margin-right: 10px;
@@ -870,10 +869,14 @@ h1, h2, h3, h4, h5, h6 {
   color: inherit;
 }
 
+/* src/index.css */
+
+/* ... visi jau esami stiliai ... */
+
 /* Send email button styling */
 .send-email-button {
   background-color: var(--accent-color);
-  color: var(--text-color);
+  color:   #f6ef31;/* Ši spalva bus šviesiuoju režimu */
   border: none;
   padding: 10px 15px;
   border-radius: 5px;
@@ -881,6 +884,17 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 1em;
   transition: background-color 0.2s ease, filter 0.2s ease;
 }
+
+.send-email-button:hover {
+  filter: brightness(1.1);
+}
+
+/* Nauja taisyklė: send-email-button tamsiuoju režimu */
+.registration-confirmation-modal.dark .send-email-button {
+  color: #0d1218; /* Naudojame tamsios temos teksto spalvą */
+}
+
+/* ... kiti stiliai ... */
 
 /* Hover effect for send email button */
 .send-email-button:hover {
@@ -892,7 +906,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 10px;
   font-size: 0.9em;
   font-weight: bold;
-  color: green;
+  color: red;
 }
 
 /* Close modal button styling */
@@ -910,7 +924,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Hover effect for close modal button */
 .close-modal-button:hover {
-  background-color: #5a6268;
+  background-color: #0d1218;
 }
 
 /* Responsive adjustments for modal on smaller screens */

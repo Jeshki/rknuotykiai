@@ -38,7 +38,7 @@ function Navigation() {
             <NavLink
               to="/"
               className={({ isActive }) =>
-                `${textColorDesktop} ${isActive ? `font-bold ${activeLinkColor}` : ''}`
+                `${textColorDesktop} text-lg uppercase ${isActive ? `font-bold ${activeLinkColor}` : ''}`
               }
             >
               Apie mane
@@ -48,7 +48,7 @@ function Navigation() {
             <NavLink
               to="/zygiai"
               className={({ isActive }) =>
-                `${textColorDesktop} ${isActive ? `font-bold ${activeLinkColor}` : ''}`
+                `${textColorDesktop} text-lg uppercase ${isActive ? `font-bold ${activeLinkColor}` : ''}`
               }
             >
               Žygiai
@@ -58,7 +58,7 @@ function Navigation() {
             <NavLink
               to="/paslaugos"
               className={({ isActive }) =>
-                `${textColorDesktop} ${isActive ? `font-bold ${activeLinkColor}` : ''}`
+                `${textColorDesktop} text-lg uppercase ${isActive ? `font-bold ${activeLinkColor}` : ''}`
               }
             >
               Paslaugos
@@ -68,7 +68,7 @@ function Navigation() {
             <NavLink
               to="/artimiausi-renginiai"
               className={({ isActive }) =>
-                `${textColorDesktop} ${isActive ? `font-bold ${activeLinkColor}` : ''}`
+                `${textColorDesktop} text-lg uppercase ${isActive ? `font-bold ${activeLinkColor}` : ''}`
               }
             >
               Artimiausi renginiai
@@ -78,7 +78,7 @@ function Navigation() {
             <NavLink
               to="/kontaktai"
               className={({ isActive }) =>
-                `${textColorDesktop} ${isActive ? `font-bold ${activeLinkColor}` : ''}`
+                `${textColorDesktop} text-lg uppercase ${isActive ? `font-bold ${activeLinkColor}` : ''}`
               }
             >
               Kontaktai
@@ -96,7 +96,7 @@ function Navigation() {
             to="/"
             onClick={toggleMenu}
             className={({ isActive }) =>
-              `${textColorMobile} ${isActive ? `font-bold ${activeLinkColor}` : ''}`
+              `${textColorMobile} text-lg uppercase ${isActive ? `font-bold ${activeLinkColor}` : ''}`
             }
           >
             Apie mane
@@ -105,7 +105,7 @@ function Navigation() {
             to="/zygiai"
             onClick={toggleMenu}
             className={({ isActive }) =>
-              `${textColorMobile} ${isActive ? `font-bold ${activeLinkColor}` : ''}`
+              `${textColorMobile} text-lg uppercase ${isActive ? `font-bold ${activeLinkColor}` : ''}`
             }
           >
             Žygiai
@@ -114,7 +114,7 @@ function Navigation() {
             to="/paslaugos"
             onClick={toggleMenu}
             className={({ isActive }) =>
-              `${textColorMobile} ${isActive ? `font-bold ${activeLinkColor}` : ''}`
+              `${textColorMobile} text-lg uppercase ${isActive ? `font-bold ${activeLinkColor}` : ''}`
             }
           >
             Paslaugos
@@ -123,7 +123,7 @@ function Navigation() {
             to="/artimiausi-renginiai"
             onClick={toggleMenu}
             className={({ isActive }) =>
-              `${textColorMobile} ${isActive ? `font-bold ${activeLinkColor}` : ''}`
+              `${textColorMobile} text-lg uppercase ${isActive ? `font-bold ${activeLinkColor}` : ''}`
             }
           >
             Artimiausi renginiai
@@ -132,7 +132,7 @@ function Navigation() {
             to="/kontaktai"
             onClick={toggleMenu}
             className={({ isActive }) =>
-              `${textColorMobile} ${isActive ? `font-bold ${activeLinkColor}` : ''}`
+              `${textColorMobile} text-lg uppercase ${isActive ? `font-bold ${activeLinkColor}` : ''}`
             }
           >
             Kontaktai
