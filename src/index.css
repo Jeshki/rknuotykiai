@@ -1,0 +1,16 @@
+/* src/index.css */
+@import url('https://fonts.googleapis.com/css2?family=Advent+Pro:wght@100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Globalūs baziniai stiliai, kurių negalima (ar netikslinga) dėti tiesiai į komponentus */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Nustatome body fono ir teksto spalvą per ThemeContext */
+/* Šriftas ir perėjimai taip pat bus nustatyti per ThemeContext tiesiai ant body elemento */
