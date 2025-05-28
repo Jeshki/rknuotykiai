@@ -1,4 +1,3 @@
-/* src/components/RegistracijosForma.jsx */
 import React, { useState } from 'react';
 import { useTheme } from '../context/ThemeContext';
 
@@ -11,11 +10,11 @@ const RegistracijosForma = ({ zygis, onSubmitSuccess, onCancel }) => {
     email: '',
   });
 
-  const formBg = theme === 'light' ? 'bg-neutral-200' : 'bg-slate-800';
+  const formBg = theme === 'light' ? 'bg-neutral-200' : 'bg-green-900';
   const formTextColor = theme === 'light' ? 'text-gray-800' : 'text-slate-100';
   const inputBorder = theme === 'light' ? 'border-gray-300' : 'border-gray-600';
-  const inputFocusBorder = theme === 'light' ? 'border-emerald-950' : 'border-slate-700';
-  const submitButtonBg = theme === 'light' ? 'bg-emerald-950' : 'bg-slate-700';
+  const inputFocusBorder = theme === 'light' ? 'border-emerald-950' : 'border-slate-100'; // Pakeista iš border-green-800 į border-slate-100
+  const submitButtonBg = theme === 'light' ? 'bg-emerald-950' : 'bg-green-800';
   const submitButtonTextColor = theme === 'light' ? 'text-neutral-200' : 'text-slate-100';
   const cancelButtonBg = 'bg-gray-300';
   const cancelButtonTextColor = 'text-gray-800';

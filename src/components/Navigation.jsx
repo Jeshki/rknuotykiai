@@ -1,8 +1,7 @@
-/* src/components/Navigation.jsx */
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useTheme } from '../context/ThemeContext';
-import { Menu, X } from 'lucide-react'; // Atnaujinti importai
+import { Menu, X } from 'lucide-react';
 import ThemeToggle from './ThemeToggle';
 
 function Navigation() {
@@ -13,7 +12,7 @@ function Navigation() {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const navBgColor = theme === 'light' ? 'bg-emerald-950' : 'bg-slate-700';
+  const navBgColor = theme === 'light' ? 'bg-emerald-950' : 'bg-green-800'; // Pakeista iš bg-green-800 į bg-green-800
   const navTextColor = theme === 'light' ? 'text-neutral-200' : 'text-slate-100';
   const navActiveLinkColor = theme === 'light' ? 'font-bold text-neutral-200' : 'font-bold text-slate-100';
 

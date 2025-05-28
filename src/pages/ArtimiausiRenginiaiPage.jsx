@@ -1,4 +1,3 @@
-/* src/pages/ArtimiausiRenginiaiPage.jsx */
 import React, { useState } from 'react';
 import { useTheme } from '../context/ThemeContext';
 import busimiZygiai from '../data/busimiZygiaiData';
@@ -12,8 +11,9 @@ const ArtimiausiRenginiaiPage = () => {
   const [selectedZygis, setSelectedZygis] = useState(null);
   const [registrationData, setRegistrationData] = useState(null);
 
-  const pageBgColor = theme === 'light' ? 'bg-neutral-200' : 'bg-slate-900';
-  const pageTextColor = theme === 'light' ? 'text-gray-800' : 'text-slate-100';
+  // Puslapio fono ir teksto spalvos
+  const pageBgColor = theme === 'light' ? 'bg-neutral-200' : 'bg-green-900'; // Fono spalva tamsiuoju režimu yra green-900
+  const pageTextColor = theme === 'light' ? 'text-gray-800' : 'text-slate-100'; // Teksto spalva tamsiuoju režimu yra slate-100
 
   const handleRegisterClick = (zygis) => {
     setSelectedZygis(zygis);

@@ -1,11 +1,10 @@
-/* src/pages/PaslaugosPage.jsx */
 import React from 'react';
 import { useTheme } from '../context/ThemeContext';
 
 function PaslaugosPage() {
   const { theme } = useTheme();
 
-  const pageBgColor = theme === 'light' ? 'bg-neutral-200' : 'bg-slate-900';
+  const pageBgColor = theme === 'light' ? 'bg-neutral-200' : 'bg-green-900'; // Pakeista iš bg-green-700 į bg-green-900
   const pageTextColor = theme === 'light' ? 'text-gray-800' : 'text-slate-100';
 
   return (

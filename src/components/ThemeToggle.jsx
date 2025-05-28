@@ -1,12 +1,11 @@
-/* src/components/ThemeToggle.jsx */
 import React from 'react';
 import { useTheme } from '../context/ThemeContext';
-import { Sun, Moon } from 'lucide-react'; // Atnaujinti importai
+import { Sun, Moon } from 'lucide-react';
 
 function ThemeToggle() {
   const { theme, toggleTheme } = useTheme();
 
-  const buttonBgColor = theme === 'light' ? 'bg-emerald-950' : 'bg-slate-700';
+  const buttonBgColor = theme === 'light' ? 'bg-emerald-950' : 'bg-green-800'; // Pakeista iš bg-green-800 į bg-green-800
   const buttonTextColor = theme === 'light' ? 'text-neutral-200' : 'text-slate-100';
 
   return (
