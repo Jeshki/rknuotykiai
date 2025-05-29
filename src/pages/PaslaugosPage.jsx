@@ -4,11 +4,13 @@ import { useTheme } from '../context/ThemeContext';
 function PaslaugosPage() {
   const { theme } = useTheme();
 
-  const pageBgColor = theme === 'light' ? 'bg-neutral-200' : 'bg-green-900'; // Pakeista iš bg-green-700 į bg-green-900
-  const pageTextColor = theme === 'light' ? 'text-gray-800' : 'text-slate-100';
+  // Fono spalva: emerald-950 light režime, emerald-950 dark režime
+  const pageBgColor = theme === 'light' ? 'bg-slate-100' : 'bg-slate-50';
+  // Teksto spalva: visada slate-100
+  const pageTextColor = theme === 'light' ? 'text-emerald-950' : 'text-green-900' ;
 
   return (
-    <div className={`min-h-[calc(100vh-80px-100px)] flex flex-col items-center justify-center p-4 md:p-8 ${pageBgColor} ${pageTextColor} w-full`}>
+    <div className={`flex flex-col items-center justify-center p-4 md:p-8 ${pageBgColor} ${pageTextColor} w-full`}>
       <h1 className="text-4xl md:text-5xl font-bold mb-4">Paslaugų puslapis</h1>
       <p className="text-lg md:text-xl text-center max-w-2xl">Čia bus pateikiamos siūlomos paslaugos.</p>
     </div>

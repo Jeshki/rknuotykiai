@@ -6,16 +6,17 @@ const Modal = ({ registracijosInfo, onClose, onSendEmail }) => {
   const [emailToSend, setEmailToSend] = useState('');
   const [emailSentStatus, setEmailSentStatus] = useState('');
 
-  const modalBg = theme === 'light' ? 'bg-neutral-200' : 'bg-green-900';
-  const modalTextColor = theme === 'light' ? 'text-gray-800' : 'text-slate-100';
-  const headingColor = theme === 'light' ? 'text-emerald-950' : 'text-slate-100'; // Pakeista iš text-green-800 į text-slate-100
-  const buttonBg = theme === 'light' ? 'bg-emerald-950' : 'bg-green-800';
-  const buttonTextColor = theme === 'light' ? 'text-neutral-200' : 'text-slate-100';
+  // Modal spalvos
+  const modalBg = theme === 'light' ? 'bg-neutral-200' : 'bg-emerald-950'; // Modal fonas
+  const modalTextColor = theme === 'light' ? 'text-gray-800' : 'text-slate-100'; // Modal tekstas
+  const headingColor = theme === 'light' ? 'text-emerald-950' : 'text-slate-100'; // Antraštės spalva
+  const buttonBg = theme === 'light' ? 'bg-emerald-950' : 'bg-green-900'; // Mygtuko fonas
+  const buttonTextColor = theme === 'light' ? 'text-neutral-200' : 'text-slate-100'; // Mygtuko tekstas
   const closeButtonBg = 'bg-gray-500';
   const closeButtonTextColor = 'text-white';
-  const inputBorder = theme === 'light' ? 'border-gray-300' : 'border-gray-600';
-  const paymentInfoBorder = theme === 'light' ? 'border-gray-300' : 'border-gray-600';
-  const paymentInfoBg = theme === 'light' ? 'bg-gray-100' : 'bg-green-900';
+  const inputBorder = theme === 'light' ? 'border-gray-300' : 'border-gray-300'; // Input rėmelis
+  const paymentInfoBorder = theme === 'light' ? 'border-gray-300' : 'border-gray-300'; // Mokėjimo info rėmelis
+  const paymentInfoBg = theme === 'light' ? 'bg-gray-100' : 'bg-green-900'; // Mokėjimo info fonas
 
 
   const handleEmailChange = (e) => {
@@ -27,13 +28,14 @@ const Modal = ({ registracijosInfo, onClose, onSendEmail }) => {
       setEmailSentStatus('Įveskite el. pašto adresą.');
       return;
     }
-    console.log(`Siunčiama registracijos informacija į ${email}:`, info);
+    console.log('Bandoma siųsti patvirtinimą į:', emailToSend);
+    console.log('Su informacija:', registracijosInfo);
 
     try {
       await onSendEmail(emailToSend, registracijosInfo);
       setEmailSentStatus('Patvirtinimas išsiųstas sėkmingai!');
-    } catch (error) {
-      console.error('Nepavyko išsiųsti patvirtinimo el. paštu:', error);
+    } catch (error) { // <-- Panaudojamas error kintamasis
+      console.error('Nepavyko išsiųsti patvirtinimo el. paštu:', error); // Pridėta klaidos registravimo eilutė
       setEmailSentStatus('Nepavyko išsiųsti patvirtinimo. Bandykite dar kartą.');
     }
   };

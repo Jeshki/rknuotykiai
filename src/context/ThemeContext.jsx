@@ -17,12 +17,14 @@ export const ThemeProvider = ({ children }) => {
 
     body.classList.add('min-h-screen', 'flex', 'flex-col', 'font-advent-pro', 'transition-colors', 'duration-300');
 
-    if (theme === 'dark') {
-      body.classList.add('dark', 'bg-green-900', 'text-slate-100'); // Pakeista iš bg-green-700 į bg-green-900
-      body.classList.remove('light', 'bg-neutral-200', 'text-gray-800');
-    } else {
-      body.classList.add('light', 'bg-neutral-200', 'text-gray-800');
-      body.classList.remove('dark', 'bg-green-900', 'text-slate-100'); // Pakeista iš bg-green-700 į bg-green-900
+    if (theme === 'light') { // Šviesus režimas
+      body.classList.add('bg-emerald-950', 'text-slate-100');
+      body.classList.remove('bg-emerald-950'); // Ensure removal of previous dark mode background
+      body.classList.remove('bg-green-900', 'text-slate-50'); // Ensure removal of old dark mode classes
+    } else { // Tamsus režimas
+      body.classList.add('bg-emerald-950', 'text-slate-100'); // Set dark mode background to emerald-950 and text to slate-100
+      body.classList.remove('bg-green-900', 'text-slate-100'); // Remove light mode background and text if present
+      body.classList.remove('bg-neutral-200', 'text-gray-800'); // Remove any other conflicting classes
     }
     localStorage.setItem('theme', theme);
   }, [theme]);

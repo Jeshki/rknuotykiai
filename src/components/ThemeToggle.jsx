@@ -5,8 +5,10 @@ import { Sun, Moon } from 'lucide-react';
 function ThemeToggle() {
   const { theme, toggleTheme } = useTheme();
 
-  const buttonBgColor = theme === 'light' ? 'bg-emerald-950' : 'bg-green-800'; // Pakeista iš bg-green-800 į bg-green-800
-  const buttonTextColor = theme === 'light' ? 'text-neutral-200' : 'text-slate-100';
+  // Mygtuko spalvos: emerald-950 light režime, emerald-950 dark režime
+  const buttonBgColor = theme === 'light' ? 'bg-emerald-950' : 'bg-emerald-950';
+  // Teksto spalva: visada slate-100
+  const buttonTextColor = 'text-slate-100';
 
   return (
     <button

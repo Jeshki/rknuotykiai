@@ -5,11 +5,13 @@ import videoBackground from '../assets/rknuotykiai.mp4';
 const ApieManePage = () => {
   const { theme } = useTheme();
 
-  const pageBgColor = theme === 'light' ? 'bg-neutral-200' : 'bg-green-900'; // Pakeista iš bg-green-700 į bg-green-900
-  const pageTextColor = theme === 'light' ? 'text-gray-800' : 'text-slate-100';
+  // Fono spalva: emerald-950 light režime, emerald-950 dark režime
+  const pageBgColor = theme === 'light' ? 'bg-slate-100' : 'bg-slate-50';
+  // Teksto spalva: visada slate-100
+  const pageTextColor = 'text-emerald-950';
 
   return (
-    <div className={`min-h-[calc(100vh-80px-100px)] flex flex-col items-center ${pageBgColor} ${pageTextColor} w-full`}>
+    <div className={`flex flex-col items-center ${pageBgColor} ${pageTextColor} w-full`}>
       <div className="relative w-full h-[70vh] overflow-hidden flex justify-center items-center mb-5">
         <video autoPlay loop muted playsInline className="absolute w-full h-full object-cover top-0 left-0 z-10">
           <source src={videoBackground} type="video/mp4" />

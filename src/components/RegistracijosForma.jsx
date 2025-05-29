@@ -10,12 +10,13 @@ const RegistracijosForma = ({ zygis, onSubmitSuccess, onCancel }) => {
     email: '',
   });
 
-  const formBg = theme === 'light' ? 'bg-neutral-200' : 'bg-green-900';
-  const formTextColor = theme === 'light' ? 'text-gray-800' : 'text-slate-100';
-  const inputBorder = theme === 'light' ? 'border-gray-300' : 'border-gray-600';
-  const inputFocusBorder = theme === 'light' ? 'border-emerald-950' : 'border-slate-100'; // Pakeista iš border-green-800 į border-slate-100
-  const submitButtonBg = theme === 'light' ? 'bg-emerald-950' : 'bg-green-800';
-  const submitButtonTextColor = theme === 'light' ? 'text-neutral-200' : 'text-slate-100';
+  // Formos spalvos
+  const formBg = theme === 'light' ? 'bg-emerald-950' : 'bg-emerald-950'; // Fonas
+  const formTextColor = 'text-slate-100'; // Tekstas
+  const inputBorder = theme === 'light' ? 'border-gray-600' : 'border-gray-300'; // Input rėmelis
+  const inputFocusBorder = 'border-slate-100'; // Fokusavimo rėmelis
+  const submitButtonBg = theme === 'light' ? 'bg-slate-100' : 'bg-green-900'; // Mygtuko fonas (šviesus light, žalias dark)
+  const submitButtonTextColor = theme === 'light' ? 'text-emerald-950' : 'text-slate-100'; // Mygtuko tekstas (tamsus light, šviesus dark)
   const cancelButtonBg = 'bg-gray-300';
   const cancelButtonTextColor = 'text-gray-800';
 

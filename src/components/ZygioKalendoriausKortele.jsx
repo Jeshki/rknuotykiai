@@ -1,15 +1,16 @@
+/* src/components/ZygioKalendoriausKortele.jsx */
 import React from 'react';
 import { useTheme } from '../context/ThemeContext';
 
 const ZygioKalendoriausKortele = ({ zygis, onRegisterClick }) => {
   const { theme } = useTheme();
 
-  const cardBg = theme === 'light' ? 'bg-neutral-200' : 'bg-green-900';
-  const cardTextColor = theme === 'light' ? 'text-gray-800' : 'text-slate-100';
-  const headingColor = theme === 'light' ? 'text-emerald-950' : 'text-slate-100'; // Pakeista iš text-green-800 į text-slate-100
-  const buttonBg = theme === 'light' ? 'bg-emerald-950' : 'bg-green-800';
-  const buttonTextColor = theme === 'light' ? 'text-neutral-200' : 'text-slate-100';
-  const linkColor = theme === 'light' ? 'text-emerald-950' : 'text-slate-100'; // Pakeista iš text-green-800 į text-slate-100
+  const cardBg = theme === 'light' ? 'bg-emerald-950' : 'bg-green-900'; // Card background
+  const cardTextColor = theme === 'light' ? 'text-slate-100' : 'text-slate-100'; // Card text
+  const headingColor = theme === 'light' ? 'text-slate-100' : 'text-slate-100'; // Heading color
+  const buttonBg = theme === 'light' ? 'bg-emerald-950' : 'bg-green-900'; // Button background
+  const buttonTextColor = theme === 'light' ? 'text-slate-100' : 'text-slate-100'; // Button text
+  const linkColor = theme === 'light' ? 'text-slate-100' : 'text-slate-100'; // Link color
 
   const formatDate = (dateString) => {
     const options = { year: 'numeric', month: 'long', day: 'numeric' };

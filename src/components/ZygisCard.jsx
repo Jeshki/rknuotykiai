@@ -8,11 +8,12 @@ const ZygisCard = ({ zygis }) => {
   const { theme } = useTheme();
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  const cardBg = theme === 'light' ? 'bg-neutral-200' : 'bg-green-900';
-  const cardTextColor = theme === 'light' ? 'text-gray-800' : 'text-slate-100';
-  const headingColor = theme === 'light' ? 'text-emerald-950' : 'text-slate-100'; // Pakeista iš text-green-800 į text-slate-100
-  const carouselArrowsDotsColor = theme === 'light' ? '#064e3b' : '#047857';
-  const activeDotColor = theme === 'light' ? '#0d1218' : '#f1f5f9';
+  // Kortelės spalvos
+  const cardBg = theme === 'light' ? 'bg-emerald-950' : 'bg-green-900'; // Fonas
+  const cardTextColor = 'text-slate-100'; // Tekstas
+  const headingColor = 'text-slate-100'; // Pavadinimo tekstas
+  const carouselArrowsDotsColor = theme === 'light' ? '#f1f5f9' : '#f1f5f9'; // Rodyklių spalva (slate-100 light, slate-100 dark)
+  const activeDotColor = 'text-slate-100'; // Aktyvaus taško spalva (visada slate-100)
 
   const settings = {
     dots: true,
