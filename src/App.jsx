@@ -8,8 +8,7 @@ import ArtimiausiRenginiaiPage from './pages/ArtimiausiRenginiaiPage';
 import KontaktaiPage from './pages/KontaktaiPage';
 import PaslaugosPage from './pages/PaslaugosPage';
 import ZygiaiPage from './pages/ZygiaiPage';
-// Importuok naują puslapį
-import AtsiliepimaiPage from './pages/AtsiliepimaiPage'; // <<<--- PRIDĖK ŠIĄ EILUTĘ
+import AtsiliepimaiPage from './pages/AtsiliepimaiPage'; 
 
 function App() {
   return (
@@ -23,8 +22,7 @@ function App() {
           <Route path="/kontaktai" element={<KontaktaiPage />} />
           <Route path="/zygiai" element={<ZygiaiPage />} />
           <Route path="/paslaugos" element={<PaslaugosPage />} />
-          {/* Pridėk maršrutą atsiliepimų puslapiui */}
-          <Route path="/atsiliepimai" element={<AtsiliepimaiPage />} /> {/* <<<--- PRIDĖK ŠIĄ EILUTĘ */}
+          <Route path="/atsiliepimai" element={<AtsiliepimaiPage />} />
         </Routes>
       </main>
       <Footer />

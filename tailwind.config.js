@@ -1,23 +1,37 @@
-// tailwind.config.js
-const defaultTheme = require('tailwindcss/defaultTheme');
-
+/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
     "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}", // Užtikrink, kad šis kelias teisingai nurodo į tavo komponentus
+    "./src/**/*.{js,ts,jsx,tsx}", // Labai svarbu, kad Tailwind nuskaitytų visas klases
   ],
   theme: {
     extend: {
       fontFamily: {
-        // Pridedame 'advent' kaip naują šriftų šeimą
-        // Galėsi naudoti klasę: font-advent
-        // Kaip atsarginį šriftą naudojame numatytuosius sans-serif šriftus
-        'advent': ['"Advent Pro"', ...defaultTheme.fontFamily.sans],
-
-        // Pridedame 'museo' kaip naują šriftų šeimą
-        // Galėsi naudoti klasę: font-museo
-        'museo': ['"MuseoModerno"', ...defaultTheme.fontFamily.sans],
+        'advent-pro': ['"Advent Pro"', 'sans-serif'], // Pridėkite savo šriftą čia
       },
+      // Jei naudojate spalvas, kurios nėra default Tailwind paletėje,
+      // turėsite jas apibrėžti čia.
+      // Pvz., jei `neutral-200`, `emerald-950`, `slate-900`, `slate-700`,
+      // `gray-800`, `slate-100`, `slate-800`, `gray-300`, `gray-600`,
+      // `gray-100`, `slate-950`, `gray-500` nėra jau apibrėžtos,
+      // Tailwind gali jų neįtraukti į galutinį CSS.
+      // Tačiau didžioji dalis šių spalvų yra numatytosios Tailwind paletės dalis.
+      colors: {
+        'neutral-200': '#e5e5e5', // Pavyzdys, jei nėra numatytojo
+        'emerald-950': '#064e3b', // Pavyzdys
+        'slate-900': '#0f172a',  // Pavyzdys
+        'slate-700': '#334155',  // Pavyzdys
+        'slate-800': '#1e293b',  // Pavyzdys
+        'slate-100': '#f1f5f9',  // Pavyzdys
+        'gray-800': '#1f2937',   // Pavyzdys
+        'gray-300': '#d1d5db',   // Pavyzdys
+        'gray-600': '#4b5563',   // Pavyzdys
+        'gray-100': '#f3f4f6',   // Pavyzdys
+        'slate-950': '#020617',  // Pavyzdys
+        'gray-500': '#6b7280',   // Pavyzdys
+        'orange-500': '#f97316', // Pavyzdys
+        'red-500': '#ef4444',    // Pavyzdys
+      }
     },
   },
   plugins: [],
