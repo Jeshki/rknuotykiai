@@ -1,7 +1,8 @@
 // src/pages/AtsiliepimaiPage.jsx
 import React from 'react';
 import { useTheme } from '../context/ThemeContext';
-import { Star, UserCircle, CalendarDays } from 'lucide-react'; // Pridedame ikonas
+import { Star, UserCircle, CalendarDays } from 'lucide-react'; 
+import { Link } from 'react-router-dom';// Pridedame ikonas
 
 // Įkeliame pavyzdinius atsiliepimus (arba importuojame iš atskiro failo)
 const atsiliepimai = [
@@ -90,8 +91,8 @@ const AtsiliepimaiPage = () => {
   const { theme } = useTheme();
 
   // Puslapio spalvos pagal temą
-  const pageBgColor = theme === 'light' ? 'bg-slate-100' : 'bg-slate-50';
-  const pageTextColor = 'text-emerald-950'; // Pagrindinė teksto spalva ant puslapio fono
+  const pageBgColor = theme === 'light' ? 'bg-slate-100' : 'bg-green-700'; // Pakeista iš bg-slate-50
+  const pageTextColor = theme === 'light' ?'text-emerald-950': 'text-slate-100'; // Pagrindinė teksto spalva ant puslapio fono
 
   return (
     <div className={`flex flex-col items-center p-4 md:p-8 ${pageBgColor} ${pageTextColor} w-full min-h-screen`}>

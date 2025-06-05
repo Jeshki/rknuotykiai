@@ -14,8 +14,8 @@ const KontaktaiPage = () => {
   const [formStatus, setFormStatus] = useState(''); // '', 'siunciama', 'sekmingai', 'klaida'
 
   // Puslapio spalvos pagal temą
-  const pageBgColor = theme === 'light' ? 'bg-slate-100' : 'bg-slate-50';
-  const pageTextColor = 'text-emerald-950';
+  const pageBgColor = theme === 'light' ? 'bg-slate-100' : 'bg-green-700'; // Pakeista iš bg-slate-50
+  const pageTextColor = theme === 'light' ? 'bg-emerald-950' : 'text-slate-100'; // Ši klasė lieka tokia, nes pagrindinis tekstas ant šviesaus fono
   const cardBgColor = theme === 'light' ? 'bg-white' : 'bg-green-900'; // Kortelių fonas
   const cardTextColor = theme === 'light' ? 'text-emerald-950' : 'text-slate-100'; // Kortelių tekstas
   const headingColor = theme === 'light' ? 'text-emerald-950' : 'text-slate-100'; // Antraščių spalva kortelėse

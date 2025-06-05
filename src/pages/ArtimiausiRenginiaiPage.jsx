@@ -1,3 +1,4 @@
+/* src/pages/ArtimiausiRenginiaiPage.jsx */
 import React, { useState } from 'react';
 import { useTheme } from '../context/ThemeContext';
 import busimiZygiai from '../data/busimiZygiaiData';
@@ -11,10 +12,8 @@ const ArtimiausiRenginiaiPage = () => {
   const [selectedZygis, setSelectedZygis] = useState(null);
   const [registrationData, setRegistrationData] = useState(null);
 
-  // Fono spalva: emerald-950 light režime, emerald-950 dark režime
-  const pageBgColor = theme === 'light' ? 'bg-slate-100' : 'bg-slate-50';
-  // Teksto spalva: visada slate-100
-  const pageTextColor = 'text-emerald-950';
+  const pageBgColor = theme === 'light' ? 'bg-neutral-200' : 'bg-green-700'; 
+  const pageTextColor = theme === 'light' ? 'text-emerald-950' : 'text-slate-100';
 
   const handleRegisterClick = (zygis) => {
     setSelectedZygis(zygis);
@@ -45,7 +44,7 @@ const ArtimiausiRenginiaiPage = () => {
   };
 
   return (
-    <div className={`flex flex-col items-center p-4 md:p-8 text-center ${pageBgColor} ${pageTextColor} w-full`}>
+    <div className={`min-h-[calc(100vh-80px-100px)] flex flex-col items-center p-4 md:p-8 text-center ${pageBgColor} ${pageTextColor} w-full`}>
       <h1 className="text-4xl md:text-5xl font-bold mb-4">Būsimų žygių kalendorius</h1>
       <p className="text-lg md:text-xl mb-8 max-w-3xl mx-auto leading-relaxed">Išsirinkite ir registruokitės į artimiausius nuotykius!</p>
 
