@@ -1,31 +1,32 @@
-// src/components/Navigation.jsx
+/* src/components/Navigation.jsx */
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useTheme } from '../context/ThemeContext';
-import { Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react'; // Atnaujinti importai
 import ThemeToggle from './ThemeToggle';
 
+import HikingLogo from '../assets/hiking.svg'; // <-- PRIDĖTAS LOGO IMPORTAS
+
 function Navigation() {
-  const { theme } = useTheme();
+  const { theme = 'light' } = useTheme(); // Default 'light' tema, jei useTheme grąžina undefined
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  // Spalvų kintamieji pagal temą
-  const navBgColor = theme === 'light' ? 'bg-emerald-950' : 'bg-green-900';
-  const navTextColor = 'text-slate-100';
-  const navActiveLinkColor = 'font-bold text-slate-100';
+  const navBgColor = theme === 'light' ? 'bg-emerald-950' : 'bg-green-800';
+  const navTextColor = theme === 'light' ? 'text-neutral-200' : 'text-slate-100';
+  const navActiveLinkColor = theme === 'light' ? 'font-bold text-neutral-200' : 'font-bold text-slate-100';
 
   return (
     <nav className={`${navBgColor} p-4 shadow-md`}>
       <div className="container mx-auto flex items-center justify-between">
         <div className={`text-lg font-bold ${navTextColor}`}>
-          LOGO
+          {/* <-- PAKEISTA: Vietoj teksto 'LOGO' įdėtas paveikslėlis */}
+         <img src={HikingLogo} alt="Hiking Logo" className="h-8 w-auto text-white" />
         </div>
 
-        {/* Meniu mygtukas mobiliesiems įrenginiams */}
         <button className="md:hidden" onClick={toggleMenu}>
           {isMenuOpen ? (
             <X size={24} className={navTextColor} />
@@ -34,7 +35,6 @@ function Navigation() {
           )}
         </button>
 
-        {/* Pagrindinis meniu */}
         <ul className="hidden md:flex flex-row space-x-4 items-center">
           <li>
             <NavLink
@@ -96,13 +96,12 @@ function Navigation() {
               Kontaktai
             </NavLink>
           </li>
-          <li>
-            <ThemeToggle />
-          </li>
+            <li>
+              <ThemeToggle />
+            </li>
         </ul>
       </div>
 
-      {/* Mobilusis meniu */}
       {isMenuOpen && (
         <div className={`md:hidden flex flex-col space-y-4 p-4 ${navBgColor}`}>
           <NavLink
@@ -114,7 +113,7 @@ function Navigation() {
           >
             Apie mane
           </NavLink>
-          <NavLink
+            <NavLink
             to="/zygiai"
             onClick={toggleMenu}
             className={({ isActive }) =>
@@ -123,7 +122,7 @@ function Navigation() {
           >
             Žygiai
           </NavLink>
-          <NavLink
+            <NavLink
             to="/paslaugos"
             onClick={toggleMenu}
             className={({ isActive }) =>
@@ -132,7 +131,7 @@ function Navigation() {
           >
             Paslaugos
           </NavLink>
-          <NavLink
+            <NavLink
             to="/artimiausi-renginiai"
             onClick={toggleMenu}
             className={({ isActive }) =>
@@ -150,7 +149,7 @@ function Navigation() {
           >
             Atsiliepimai
           </NavLink>
-          <NavLink
+            <NavLink
             to="/kontaktai"
             onClick={toggleMenu}
             className={({ isActive }) =>
@@ -159,9 +158,9 @@ function Navigation() {
           >
             Kontaktai
           </NavLink>
-          <li>
-            <ThemeToggle />
-          </li>
+            <li>
+              <ThemeToggle />
+            </li>
         </div>
       )}
     </nav>

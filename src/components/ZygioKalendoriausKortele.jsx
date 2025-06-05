@@ -5,17 +5,19 @@ import { useTheme } from '../context/ThemeContext';
 const ZygioKalendoriausKortele = ({ zygis, onRegisterClick }) => {
   const { theme } = useTheme();
 
-  const cardBg = theme === 'light' ? 'bg-emerald-950' : 'bg-green-900'; // Card background
-  const cardTextColor = theme === 'light' ? 'text-slate-100' : 'text-slate-100'; // Card text
-  const headingColor = theme === 'light' ? 'text-slate-100' : 'text-slate-100'; // Heading color
-  const buttonBg = theme === 'light' ? 'bg-emerald-950' : 'bg-green-900'; // Button background
-  const buttonTextColor = theme === 'light' ? 'text-slate-100' : 'text-slate-100'; // Button text
-  const linkColor = theme === 'light' ? 'text-slate-100' : 'text-slate-100'; // Link color
+  const cardBg = theme === 'light' ? 'bg-slate-100' : 'bg-green-800'; // Pakeista iš bg-slate-800
+  const cardTextColor = theme === 'light' ? 'text-emerald-950' : 'text-slate-100';
+  const headingColor = theme === 'light' ? 'text-emerald-950' : 'text-slate-100';
+  const buttonBg = theme === 'light' ? 'bg-emerald-950' : 'bg-slate-100';
+  const buttonTextColor = theme === 'light' ? 'text-slate-100' : 'text-emerald-950';
+  const linkColor = theme === 'light' ? 'text-emerald-950' : 'text-slate-700';
 
   const formatDate = (dateString) => {
     const options = { year: 'numeric', month: 'long', day: 'numeric' };
     return new Date(dateString).toLocaleDateString('lt-LT', options);
   };
+
+  const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${zygis.koordinates}`; // Pataisyta, kad būtų teisingas Google Maps URL
 
   return (
     <div className={`rounded-lg shadow-md p-6 flex flex-col justify-between ${cardBg} ${cardTextColor} transition-colors duration-300`}>
@@ -34,7 +36,7 @@ const ZygioKalendoriausKortele = ({ zygis, onRegisterClick }) => {
       <p className="mb-2"><strong>Laikas:</strong> {zygis.laikas}</p>
       <p className="mb-2"><strong>Susitikimo vieta:</strong> {zygis.susitikimoVieta}</p>
       <p className="mb-2">
-        <strong>Koordinatės:</strong> <a href={`http://maps.google.com/?q=${zygis.koordinates}`} target="_blank" rel="noopener noreferrer" className={`${linkColor} hover:underline`}>Žemėlapyje</a>
+        <strong>Koordinatės:</strong> <a href={googleMapsUrl} target="_blank" rel="noopener noreferrer" className={`${linkColor} hover:underline`}>Žemėlapyje</a>
       </p>
       <p className="mb-4"><strong>Kaina:</strong> {zygis.kaina} €</p>
       <p className="text-sm italic mb-4">{zygis.aprasymas}</p>

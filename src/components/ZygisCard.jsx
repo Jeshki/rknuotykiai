@@ -1,3 +1,4 @@
+/* src/components/ZygisCard.jsx */
 import React, { useState } from 'react';
 import { useTheme } from '../context/ThemeContext';
 import Slider from 'react-slick';
@@ -8,12 +9,19 @@ const ZygisCard = ({ zygis }) => {
   const { theme } = useTheme();
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  // Kortelės spalvos
-  const cardBg = theme === 'light' ? 'bg-emerald-950' : 'bg-green-900'; // Fonas
-  const cardTextColor = 'text-slate-100'; // Tekstas
-  const headingColor = 'text-slate-100'; // Pavadinimo tekstas
-  const carouselArrowsDotsColor = theme === 'light' ? '#f1f5f9' : '#f1f5f9'; // Rodyklių spalva (slate-100 light, slate-100 dark)
-  const activeDotColor = 'text-slate-100'; // Aktyvaus taško spalva (visada slate-100)
+  const cardBg = theme === 'light' ? 'bg-slate-100' : 'bg-green-800';
+  const cardTextColor = theme === 'light' ? 'text-emerald-950' : 'text-slate-100';
+  const headingColor = theme === 'light' ? 'text-emerald-950' : 'text-slate-100';
+  
+  // Karuselės rodyklių ir taškų spalvos
+  const carouselArrowsDotsColor = theme === 'light' ? '#064e3b' : '#f1f5f9';
+  // Naujos aktyvaus taško spalvos
+  const activeDotColor = theme === 'light' ? '#f1f5f9' : '#064e3b'; // Pakeista į slate-100 ir emerald-950
+
+  const cardStyle = {
+    '--carousel-arrows-dots-color': carouselArrowsDotsColor,
+    '--active-dot-color': activeDotColor,
+  };
 
   const settings = {
     dots: true,
@@ -28,7 +36,7 @@ const ZygisCard = ({ zygis }) => {
   };
 
   return (
-    <div className={`rounded-lg shadow-md p-6 ${cardBg} ${cardTextColor} transition-colors duration-300`}>
+    <div className={`rounded-lg shadow-md p-6 ${cardBg} ${cardTextColor} transition-colors duration-300`} style={cardStyle}>
       <h3 className={`text-2xl font-bold mb-4 ${headingColor}`}>{zygis.pavadinimas}</h3>
       <p className="mb-2"><strong>Vieta:</strong> {zygis.vieta}</p>
       
@@ -60,17 +68,6 @@ const ZygisCard = ({ zygis }) => {
           <p><strong>Aplankyti objektai:</strong> {zygis.aplankytiObjektai.join(', ')}</p>
         )}
       </div>
-      <style jsx>{`
-        .slick-prev:before, .slick-next:before {
-          color: ${carouselArrowsDotsColor} !important;
-        }
-        .slick-dots li button:before {
-          color: ${carouselArrowsDotsColor} !important;
-        }
-        .slick-dots li.slick-active button:before {
-          color: ${activeDotColor} !important;
-        }
-      `}</style>
     </div>
   );
 };

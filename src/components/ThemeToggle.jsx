@@ -1,14 +1,13 @@
+/* src/components/ThemeToggle.jsx */
 import React from 'react';
 import { useTheme } from '../context/ThemeContext';
-import { Sun, Moon } from 'lucide-react';
+import { Sun, Moon } from 'lucide-react'; // Atnaujinti importai
 
 function ThemeToggle() {
   const { theme, toggleTheme } = useTheme();
 
-  // Mygtuko spalvos: emerald-950 light režime, emerald-950 dark režime
-  const buttonBgColor = theme === 'light' ? 'bg-emerald-950' : 'bg-emerald-950';
-  // Teksto spalva: visada slate-100
-  const buttonTextColor = 'text-slate-100';
+  const buttonBgColor = theme === 'light' ? 'bg-green-700' : 'bg-emerald-950';
+  const buttonTextColor = theme === 'light' ? 'text-neutral-200' : 'text-slate-100';
 
   return (
     <button

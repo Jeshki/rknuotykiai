@@ -1,3 +1,4 @@
+// src/components/RegistracijosForma.jsx
 import React, { useState } from 'react';
 import { useTheme } from '../context/ThemeContext';
 
@@ -10,13 +11,14 @@ const RegistracijosForma = ({ zygis, onSubmitSuccess, onCancel }) => {
     email: '',
   });
 
-  // Formos spalvos
-  const formBg = theme === 'light' ? 'bg-emerald-950' : 'bg-emerald-950'; // Fonas
-  const formTextColor = 'text-slate-100'; // Tekstas
-  const inputBorder = theme === 'light' ? 'border-gray-600' : 'border-gray-300'; // Input rėmelis
-  const inputFocusBorder = 'border-slate-100'; // Fokusavimo rėmelis
-  const submitButtonBg = theme === 'light' ? 'bg-slate-100' : 'bg-green-900'; // Mygtuko fonas (šviesus light, žalias dark)
-  const submitButtonTextColor = theme === 'light' ? 'text-emerald-950' : 'text-slate-100'; // Mygtuko tekstas (tamsus light, šviesus dark)
+  const formBg = theme === 'light' ? 'bg-neutral-200' : 'bg-slate-800';
+  const formTextColor = theme === 'light' ? 'text-gray-800' : 'text-slate-100';
+  const inputBorder = theme === 'light' ? 'border-gray-300' : 'border-gray-600';
+  // Pakeisti focus klases, kad būtų tiesioginės Tailwind klasės
+  const inputFocusRing = theme === 'light' ? 'focus:ring-emerald-950' : 'focus:ring-slate-700';
+  const inputFocusBorder = theme === 'light' ? 'focus:border-emerald-950' : 'focus:border-slate-700';
+  const submitButtonBg = theme === 'light' ? 'bg-emerald-950' : 'bg-slate-700';
+  const submitButtonTextColor = theme === 'light' ? 'text-neutral-200' : 'text-slate-100';
   const cancelButtonBg = 'bg-gray-300';
   const cancelButtonTextColor = 'text-gray-800';
 
@@ -52,7 +54,7 @@ const RegistracijosForma = ({ zygis, onSubmitSuccess, onCancel }) => {
               value={formData.vardas}
               onChange={handleChange}
               required
-              className={`w-full p-3 rounded-md border ${inputBorder} focus:border-2 focus:${inputFocusBorder} focus:ring-1 focus:ring-${inputFocusBorder} bg-transparent ${formTextColor}`}
+              className={`w-full p-3 rounded-md border ${inputBorder} focus:border-2 ${inputFocusBorder} focus:ring-1 ${inputFocusRing} bg-transparent ${formTextColor}`}
             />
           </div>
           <div className="mb-4">
@@ -64,7 +66,7 @@ const RegistracijosForma = ({ zygis, onSubmitSuccess, onCancel }) => {
               value={formData.miestas}
               onChange={handleChange}
               required
-              className={`w-full p-3 rounded-md border ${inputBorder} focus:border-2 focus:${inputFocusBorder} focus:ring-1 focus:ring-${inputFocusBorder} bg-transparent ${formTextColor}`}
+              className={`w-full p-3 rounded-md border ${inputBorder} focus:border-2 ${inputFocusBorder} focus:ring-1 ${inputFocusRing} bg-transparent ${formTextColor}`}
             />
           </div>
           <div className="mb-4">
@@ -76,7 +78,7 @@ const RegistracijosForma = ({ zygis, onSubmitSuccess, onCancel }) => {
               value={formData.telefonas}
               onChange={handleChange}
               required
-              className={`w-full p-3 rounded-md border ${inputBorder} focus:border-2 focus:${inputFocusBorder} focus:ring-1 focus:ring-${inputFocusBorder} bg-transparent ${formTextColor}`}
+              className={`w-full p-3 rounded-md border ${inputBorder} focus:border-2 ${inputFocusBorder} focus:ring-1 ${inputFocusRing} bg-transparent ${formTextColor}`}
             />
           </div>
           <div className="mb-6">
@@ -88,7 +90,7 @@ const RegistracijosForma = ({ zygis, onSubmitSuccess, onCancel }) => {
               value={formData.email}
               onChange={handleChange}
               required
-              className={`w-full p-3 rounded-md border ${inputBorder} focus:border-2 focus:${inputFocusBorder} focus:ring-1 focus:ring-${inputFocusBorder} bg-transparent ${formTextColor}`}
+              className={`w-full p-3 rounded-md border ${inputBorder} focus:border-2 ${inputFocusBorder} focus:ring-1 ${inputFocusRing} bg-transparent ${formTextColor}`}
             />
           </div>
           <div className="flex justify-end space-x-4">
