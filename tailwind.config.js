@@ -7,7 +7,9 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'advent-pro': ['"Advent Pro"', 'sans-serif'], // Pridėkite savo šriftą čia
+        // Set Solitreo as the default sans-serif font
+        sans: ['"Solitreo"', 'cursive', ...require('tailwindcss/defaultTheme').fontFamily.sans],
+        'solitreo': ['"Solitreo"', 'cursive'], // Optional: for explicit font-solitreo class
       },
       // Jei naudojate spalvas, kurios nėra default Tailwind paletėje,
       // turėsite jas apibrėžti čia.
