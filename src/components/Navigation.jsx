@@ -1,7 +1,7 @@
 /* src/components/Navigation.jsx */
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { useTheme } from '../context/ThemeContext.jsx';
+import { useTheme } from '../context/useTheme.js';
 import { Menu, X } from 'lucide-react'; // Atnaujinti importai
 import ThemeToggle from './ThemeToggle.jsx';
 

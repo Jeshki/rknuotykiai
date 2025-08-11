@@ -1,6 +1,6 @@
 /* src/components/ThemeToggle.jsx */
 import React from 'react';
-import { useTheme } from '../context/ThemeContext.jsx';
+import { useTheme } from '../context/useTheme.js';
 import { Sun, Moon } from 'lucide-react'; // Atnaujinti importai
 
 function ThemeToggle() {

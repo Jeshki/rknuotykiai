@@ -1,6 +1,6 @@
 /* src/pages/ZygiaiPage.jsx */
 import React from 'react';
-import { useTheme } from '../context/ThemeContext.jsx';
+import { useTheme } from '../context/useTheme.js';
 import zygiaiData from '../data/zygiaiData.js';
 import ZygisCard from '../components/ZygisCard.jsx';
 
