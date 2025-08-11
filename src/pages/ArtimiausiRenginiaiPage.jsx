@@ -1,10 +1,10 @@
 /* src/pages/ArtimiausiRenginiaiPage.jsx */
 import React, { useState } from 'react';
-import { useTheme } from '../context/ThemeContext';
-import busimiZygiai from '../data/busimiZygiaiData';
-import ZygioKalendoriausKortele from '../components/ZygioKalendoriausKortele';
-import RegistracijosForma from '../components/RegistracijosForma';
-import Modal from '../components/Modal';
+import { useTheme } from '../context/ThemeContext.jsx';
+import busimiZygiai from '../data/busimiZygiaiData.js';
+import ZygioKalendoriausKortele from '../components/ZygioKalendoriausKortele.jsx';
+import RegistracijosForma from '../components/RegistracijosForma.jsx';
+import Modal from '../components/Modal.jsx';
 
 
 const ArtimiausiRenginiaiPage = () => {

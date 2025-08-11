@@ -1,6 +1,6 @@
 /* src/components/Footer.jsx */
 import React from 'react';
-import { useTheme } from '../context/ThemeContext';
+import { useTheme } from '../context/ThemeContext.jsx';
 
 const Footer = () => {
   const { theme } = useTheme();

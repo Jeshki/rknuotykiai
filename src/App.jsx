@@ -1,14 +1,14 @@
 // src/App.jsx
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import Navigation from './components/Navigation';
-import Footer from './components/Footer';
-import ApieManePage from './pages/ApieManePage';
-import ArtimiausiRenginiaiPage from './pages/ArtimiausiRenginiaiPage';
-import KontaktaiPage from './pages/KontaktaiPage';
-import PaslaugosPage from './pages/PaslaugosPage';
-import ZygiaiPage from './pages/ZygiaiPage';
-import AtsiliepimaiPage from './pages/AtsiliepimaiPage'; 
+import Navigation from './components/Navigation.jsx';
+import Footer from './components/Footer.jsx';
+import ApieManePage from './pages/ApieManePage.jsx';
+import ArtimiausiRenginiaiPage from './pages/ArtimiausiRenginiaiPage.jsx';
+import KontaktaiPage from './pages/KontaktaiPage.jsx';
+import PaslaugosPage from './pages/PaslaugosPage.jsx';
+import ZygiaiPage from './pages/ZygiaiPage.jsx';
+import AtsiliepimaiPage from './pages/AtsiliepimaiPage.jsx';
 
 function App() {
   return (
