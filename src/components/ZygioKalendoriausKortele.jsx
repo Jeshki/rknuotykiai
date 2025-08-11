@@ -1,6 +1,6 @@
 /* src/components/ZygioKalendoriausKortele.jsx */
 import React from 'react';
-import { useTheme } from '../context/ThemeContext.jsx';
+import { useTheme } from '../context/useTheme.js';
 
 const ZygioKalendoriausKortele = ({ zygis, onRegisterClick }) => {
   const { theme } = useTheme();

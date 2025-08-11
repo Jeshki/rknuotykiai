@@ -1,6 +1,6 @@
 // src/pages/KontaktaiPage.jsx
 import React, { useState } from 'react';
-import { useTheme } from '../context/ThemeContext.jsx';
+import { useTheme } from '../context/useTheme.js';
 import { Phone, Mail, MapPin, Facebook, Send, User, MessageSquare, Smartphone } from 'lucide-react';
 
 const KontaktaiPage = () => {

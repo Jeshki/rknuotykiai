@@ -1,6 +1,6 @@
 /* src/pages/PaslaugosPage.jsx */
 import React from 'react';
-import { useTheme } from '../context/ThemeContext.jsx';
+import { useTheme } from '../context/useTheme.js';
 import { Footprints, Users, Globe, BookOpen, HeartHandshake, MapPin } from 'lucide-react'; // Pakeista Walk į Footprints
 
 function PaslaugosPage() {

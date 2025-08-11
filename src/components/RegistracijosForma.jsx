@@ -1,6 +1,6 @@
 // src/components/RegistracijosForma.jsx
 import React, { useState } from 'react';
-import { useTheme } from '../context/ThemeContext.jsx';
+import { useTheme } from '../context/useTheme.js';
 
 const RegistracijosForma = ({ zygis, onSubmitSuccess, onCancel }) => {
   const { theme } = useTheme();

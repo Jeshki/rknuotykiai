@@ -1,6 +1,6 @@
 /* src/pages/ArtimiausiRenginiaiPage.jsx */
 import React, { useState } from 'react';
-import { useTheme } from '../context/ThemeContext.jsx';
+import { useTheme } from '../context/useTheme.js';
 import busimiZygiai from '../data/busimiZygiaiData.js';
 import ZygioKalendoriausKortele from '../components/ZygioKalendoriausKortele.jsx';
 import RegistracijosForma from '../components/RegistracijosForma.jsx';
