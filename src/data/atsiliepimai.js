@@ -1,4 +1,3 @@
-
 const pavyzdiniaiAtsiliepimai = [
   {
     id: 1,
@@ -41,3 +40,5 @@ const pavyzdiniaiAtsiliepimai = [
     zygioPavadinimas: "Pajūrio takais"
   }
 ];
+
+export default pavyzdiniaiAtsiliepimai;
