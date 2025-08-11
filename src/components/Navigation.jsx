@@ -1,9 +1,9 @@
 /* src/components/Navigation.jsx */
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { useTheme } from '../context/ThemeContext';
+import { useTheme } from '../context/ThemeContext.jsx';
 import { Menu, X } from 'lucide-react'; // Atnaujinti importai
-import ThemeToggle from './ThemeToggle';
+import ThemeToggle from './ThemeToggle.jsx';
 
 import HikingLogo from '../assets/hiking.svg'; // <-- PRIDĖTAS LOGO IMPORTAS
 

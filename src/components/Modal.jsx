@@ -1,6 +1,6 @@
 /* src/components/Modal.jsx */
 import React, { useState } from 'react';
-import { useTheme } from '../context/ThemeContext';
+import { useTheme } from '../context/ThemeContext.jsx';
 
 const Modal = ({ registracijosInfo, onClose, onSendEmail }) => {
   const { theme } = useTheme();

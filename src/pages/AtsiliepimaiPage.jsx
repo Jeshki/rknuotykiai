@@ -1,6 +1,6 @@
 // src/pages/AtsiliepimaiPage.jsx
 import React from 'react';
-import { useTheme } from '../context/ThemeContext';
+import { useTheme } from '../context/ThemeContext.jsx';
 import { Star, UserCircle, CalendarDays } from 'lucide-react'; 
 import { Link } from 'react-router-dom';// Pridedame ikonas
 

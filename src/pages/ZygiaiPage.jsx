@@ -1,8 +1,8 @@
 /* src/pages/ZygiaiPage.jsx */
 import React from 'react';
-import { useTheme } from '../context/ThemeContext';
-import zygiaiData from '../data/zygiaiData';
-import ZygisCard from '../components/ZygisCard';
+import { useTheme } from '../context/ThemeContext.jsx';
+import zygiaiData from '../data/zygiaiData.js';
+import ZygisCard from '../components/ZygisCard.jsx';
 
 const ZygiaiPage = () => {
   const { theme } = useTheme();
