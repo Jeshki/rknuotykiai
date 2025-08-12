@@ -1,15 +1,30 @@
-/* src/components/Navigation.jsx */
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { useTheme } from '../context/useTheme.js';
-import { Menu, X } from 'lucide-react'; // Atnaujinti importai
-import ThemeToggle from './ThemeToggle.jsx';
+import { useTheme } from '../context/ThemeContext';
+import { Menu, X } from 'lucide-react';
+import ThemeToggle from './ThemeToggle';
+import { gql, useQuery } from '@apollo/client';
+import localLogo from "../assets/logo.png"; // Correct way to import a local image
 
-import HikingLogo from '../assets/hiking.svg'; // <-- PRIDĖTAS LOGO IMPORTAS
+const GET_LOGO = gql`
+query {
+  themeSettings {
+    logo {
+      sourceUrl
+    }
+  }
+}
+`;
 
 function Navigation() {
-  const { theme = 'light' } = useTheme(); // Default 'light' tema, jei useTheme grąžina undefined
+  const { theme = 'light' } = useTheme();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { data, loading, error } = useQuery(GET_LOGO);
+  let logoUrl = localLogo; // Use the imported local logo as the default
+  
+  if (!loading && !error && data?.themeSettings?.logo?.sourceUrl) {
+    logoUrl = data.themeSettings.logo.sourceUrl;
+  }
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -22,10 +37,13 @@ function Navigation() {
   return (
     <nav className={`${navBgColor} p-4 shadow-md`}>
       <div className="container mx-auto flex items-center justify-between">
-        <div className={`text-lg font-bold ${navTextColor}`}>
-          {/* <-- PAKEISTA: Vietoj teksto 'LOGO' įdėtas paveikslėlis */}
-         <img src={HikingLogo} alt="Hiking Logo" className="h-8 w-auto text-white" />
-        </div>
+        <NavLink to="/" className={`text-lg font-bold ${navTextColor}`}>
+          {logoUrl ? (
+            <img src={logoUrl} alt="Logo" className="h-8 w-auto" />
+          ) : (
+            <span>RK Nuotykiai</span>
+          )}
+        </NavLink>
 
         <button className="md:hidden" onClick={toggleMenu}>
           {isMenuOpen ? (
@@ -96,9 +114,9 @@ function Navigation() {
               Kontaktai
             </NavLink>
           </li>
-            <li>
-              <ThemeToggle />
-            </li>
+          <li>
+            <ThemeToggle />
+          </li>
         </ul>
       </div>
 
@@ -113,7 +131,7 @@ function Navigation() {
           >
             Apie mane
           </NavLink>
-            <NavLink
+          <NavLink
             to="/zygiai"
             onClick={toggleMenu}
             className={({ isActive }) =>
@@ -122,7 +140,7 @@ function Navigation() {
           >
             Žygiai
           </NavLink>
-            <NavLink
+          <NavLink
             to="/paslaugos"
             onClick={toggleMenu}
             className={({ isActive }) =>
@@ -131,7 +149,7 @@ function Navigation() {
           >
             Paslaugos
           </NavLink>
-            <NavLink
+          <NavLink
             to="/artimiausi-renginiai"
             onClick={toggleMenu}
             className={({ isActive }) =>
@@ -149,7 +167,7 @@ function Navigation() {
           >
             Atsiliepimai
           </NavLink>
-            <NavLink
+          <NavLink
             to="/kontaktai"
             onClick={toggleMenu}
             className={({ isActive }) =>
@@ -158,9 +176,7 @@ function Navigation() {
           >
             Kontaktai
           </NavLink>
-            <li>
-              <ThemeToggle />
-            </li>
+          <ThemeToggle />
         </div>
       )}
     </nav>
